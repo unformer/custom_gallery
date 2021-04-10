@@ -4,6 +4,7 @@ const CREATE_GALLERY = 'upload-reducer/CREATE-GALLERY';
 const ADD_PHOTO = 'upload-reducer/ADD-PHOTO';
 const UPLOAD_PHOTO = 'upload-reducer/UPLOAD-PHOTO';
 const DELETE_PHOTO = 'upload-reducer/DELETE-PHOTO';
+const RESET_GALLERY = 'upload-reducer/RESET-GALLERY';
 
 let initialState = {
     photos: []
@@ -43,6 +44,9 @@ const uploadReducer = (state = initialState, action) => {
         case DELETE_PHOTO: {
             return { ...state, photos: state.photos.filter(p => p.id != action.photoId) }
         }
+        case RESET_GALLERY: {
+            return { ...state, photos: [] }
+        }
         default:
             return state;
     }
@@ -71,5 +75,6 @@ export const getDeletePhotoId = (photoId) => async (dispatch) => {
     dispatch(DeletePhotoFromGallery(photoId));
 }
 
+export const resetGallery = () => ({ type: RESET_GALLERY })
 
 export default uploadReducer;

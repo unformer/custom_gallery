@@ -42,8 +42,8 @@
 
 .fromFileListWrap {
   display:flex;
-  justify-content: center;
-  align-items: center
+  justify-content: space-between;
+  align-items: center;
 }
 
 .fromFile {
@@ -51,8 +51,8 @@
   @extend .btn-danger;
   display:block;
   width:100%;
-  max-width:250px;
-  margin:0 20px 0 0;
+  max-width:230px;
+  margin:0;
   input {
     display:none;
   }
@@ -61,8 +61,18 @@
 .demo {
   @extend .btn; 
   @extend .btn-success;
+  display:block;
   width:100%;
-  max-width:250px;
+  max-width:230px;
+  margin:0 20px;
+}
+
+.reset {
+  @extend .btn; 
+  @extend .btn-secondary;
+  display:block;
+  width:100%;
+  max-width:230px;
 }
 
 .dropUpload {
@@ -146,8 +156,8 @@
     flex-direction: column;
   }
 
-  .fromFile {
-    margin:0 0 15px 0;
+  .demo {
+    margin:20px 0;
   }
 
   .dropUpload {
@@ -160,5 +170,14 @@
 @media screen and (max-width:415px){
   .gallery__item {
     margin:5px 0;
+  }
+}
+
+@media screen and (max-width:360px){
+  .uploadLinkForm__url{
+    input{
+      text-overflow: ellipsis;  
+      -o-text-overflow: ellipsis;  
+    }
   }
 }

@@ -33,6 +33,10 @@ const Upload = React.memo(props => {
         props.getPhotoFromFile(JSON.stringify(demoFile));
     }
 
+    const reset = () => {
+        props.resetGallery();
+    }
+
     return (
         <div className="uploadWrapper">
             <div className="uploadWrapper__title"><h1>Create gallery</h1></div>
@@ -41,10 +45,11 @@ const Upload = React.memo(props => {
             </div>
             <div className="uploadWrapper__or">or</div>
             <div className="fromFileListWrap">
-                <label className="fromFile">Download list from JSON
+                <label className="fromFile">Upload JSON
                     <input type={"file"} onChange={fromFileUpload} />
                 </label>
                 <div className="demo" onClick={demo}>Demo gallery</div>
+                <div className="reset" onClick={reset}>Reset</div>
             </div>
             <div className="uploadWrapper__or">or</div>
             <div>
