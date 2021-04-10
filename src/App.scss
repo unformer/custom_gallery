@@ -1,0 +1,164 @@
+@import "~bootstrap/scss/bootstrap";
+
+.AppWrap {
+  max-width:860px;
+  margin:15px auto;
+  padding:0 15px;
+  box-sizing: border-box;
+}
+
+.App {
+  display:block;
+  width:100%;  
+  padding:15px;
+  box-sizing: border-box;
+  border:1px solid #ccc;
+  border-radius:5px;
+}
+
+.uploadWrapper__title {
+  display:block;
+  margin-bottom:30px;
+  text-align: center;
+}
+
+.uploadWrapper__or {
+  display:block;
+  text-align: center;
+  font-size:20px;
+  margin:15px 0;
+}
+
+.uploadLinkForm {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.uploadLinkForm__url {
+  width:80%;
+  margin-right:20px;
+}
+
+.fromFileListWrap {
+  display:flex;
+  justify-content: center;
+  align-items: center
+}
+
+.fromFile {
+  @extend .btn; 
+  @extend .btn-danger;
+  display:block;
+  width:100%;
+  max-width:250px;
+  margin:0 20px 0 0;
+  input {
+    display:none;
+  }
+}
+
+.demo {
+  @extend .btn; 
+  @extend .btn-success;
+  width:100%;
+  max-width:250px;
+}
+
+.dropUpload {
+  display:flex;
+  height:150px;
+  border:2px dashed red;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery {
+  margin: 50px auto 0;
+  display:flex;
+  flex-flow: row wrap;
+}
+
+.gallery__item {
+  position: relative;
+  flex: auto;
+  margin:5px;
+  max-height:300px;
+  .galPhoto{
+    opacity: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.gallery__item:nth-child(4n+1) {
+  width: 150px;
+}
+.gallery__item:nth-child(4n+2) {
+  width: 225px;
+}
+.gallery__item:nth-child(4n+3) {
+  width: 180px;
+}
+.gallery__item:nth-child(4n+4) {
+  width: 280px;
+}
+
+.deletePhoto {
+  display:block;
+  width:30px;
+  height:30px;
+  position: absolute;
+  top:5px;
+  right:5px;
+  cursor:pointer;  
+}
+
+.Preloader {
+  display:block;
+  position:absolute;
+  top:calc(50% - 50px);
+  left:calc(50% - 50px);
+  width:100px;
+  height:100px;
+}
+
+
+@media screen and (max-width:730px){
+  .uploadLinkForm__url {
+    width:60%;
+    margin-right:20px;
+  }
+}
+
+@media screen and (max-width:490px){
+  .uploadLinkForm {
+    flex-direction: column;
+  }
+
+  .uploadLinkForm__url{
+    width:100%;
+    margin:0 auto 20px;
+  }
+
+  .fromFileListWrap {
+    flex-direction: column;
+  }
+
+  .fromFile {
+    margin:0 0 15px 0;
+  }
+
+  .dropUpload {
+    padding:15px;
+    box-sizing: border-box;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width:415px){
+  .gallery__item {
+    margin:5px 0;
+  }
+}
