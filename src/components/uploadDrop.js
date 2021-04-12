@@ -4,7 +4,7 @@ import Dropzone from 'react-dropzone';
 function UploadDrop(props) { 
 
 return (
-  <Dropzone onDrop={acceptedFiles => props.getPhotoFromUpload(acceptedFiles)}>
+  <Dropzone accept='image/*' onDrop={acceptedFiles => props.getPhotoFromUpload(acceptedFiles)}>
   {({getRootProps, getInputProps}) => (
     <div>
       <div {...getRootProps()}>
