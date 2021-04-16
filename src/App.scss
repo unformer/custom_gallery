@@ -40,6 +40,11 @@
   margin-right:20px;
 }
 
+.uploadLinkForm__error {
+  position: absolute;
+  color:red;
+}
+
 .fromFileListWrap {
   display:flex;
   justify-content: space-between;
